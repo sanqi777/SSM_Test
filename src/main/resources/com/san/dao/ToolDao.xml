@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.san.dao.ToolDao">
+    <resultMap id="toolMap" type="com.san.domain.Tool">
+        <result column="j_code" property="j_code"></result>
+        <result column="j_name" property="j_name"></result>
+        <association property="model" javaType="com.san.domain.Model">
+            <result column="model_code" property="model_code"></result>
+            <result column="model_partno" property="model_partno"></result>
+        </association>
+    </resultMap>
+    <select id="findAll" resultMap="toolMap">
+        SELECT d.j_code,d.j_name,m.model_code,m.model_partno FROM `jb_夹具定义` d,`jb_模组和料号` m WHERE d.j_model_id = m.model_id
+    </select>
+
+
+    <select id="findByName" resultMap="toolMap">
+        SELECT
+        d.j_code,d.j_name,m.model_code,m.model_partno
+        FROM
+        `jb_夹具定义` d,`jb_模组和料号` m
+        WHERE
+        d.j_model_id = m.model_id and j_code= #{j_code}
+    </select>
+
+
+
+
+
+
+
+</mapper>
+

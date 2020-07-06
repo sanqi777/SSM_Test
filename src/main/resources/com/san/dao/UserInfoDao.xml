@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.san.dao.UserInfoDao">
+
+<!--    <resultMap id="RoleMap" type="com.san.domain.Role">-->
+<!--        <id column="job_id" property="job_id"></id>-->
+<!--        <result column="job_zw" property="job_zw"></result>-->
+<!--    </resultMap>-->
+<!--    <resultMap id="WorkCellMap" type="com.san.domain.Workcell">-->
+<!--        <id column="w_cellid" property="w_cellid"></id>-->
+<!--        <result column="workcell" property="workcell"></result>-->
+<!--    </resultMap>-->
+<!--    <resultMap id="UserInfoMap" type="com.san.domain.UserInfo" >-->
+<!--        <id column="p_id" property="p_id"></id>-->
+<!--        <result column="p_name" property="p_name"></result>-->
+<!--        <result column="p_password" property="p_password"></result>-->
+<!--        <result column="p_tel" property="p_tel"></result>-->
+<!--        <result column="p_add" property="p_add"></result>-->
+<!--        <result column="p_job_id" property="p_job_id"></result>-->
+<!--        <result column="p_w_cellid" property="p_w_cellid"></result>-->
+<!--        <collection property="roles" javaType="com.san.domain.Role" >-->
+<!--            <id column="job_id" property="job_id"></id>-->
+<!--            <result column="job_zw" property="job_zw"></result></collection>-->
+<!--&lt;!&ndash;        <collection property="workcell" javaType="com.san.domain.Workcell" ></collection>&ndash;&gt;-->
+<!--    </resultMap>-->
+<!--    <resultMap id="RoleMap" type="com.san.domain.Role">-->
+<!--            <id column="job_id" property="job_id"></id>-->
+<!--            <result column="job_zw" property="job_zw"></result>-->
+<!--        </resultMap>-->
+
+
+    <!--  多表联合查询 -->
+<!--    <select id="selectAll" resultMap="UserInfoMap">-->
+<!--        SELECT-->
+<!--            p.p_id,-->
+<!--            p.p_name,-->
+<!--            p.p_password,-->
+<!--            z.job_id,-->
+<!--            z.job_zw-->
+<!--        FROM-->
+<!--             jb_员工  p,-->
+<!--             jb_职务   z-->
+<!--        WHERE-->
+<!--            p.p_job_id = z.job_id-->
+<!--            and  p.p_name=#{p_name}-->
+<!--    </select>-->
+
+<!--    <select id="selectFindByUserMame" resultMap="RoleMap" parameterType="Sting">-->
+<!--          SELECT-->
+<!--            p.p_id,-->
+<!--            p.p_name,-->
+<!--		    p.p_password,-->
+<!--		    z.job_id,-->
+<!--            z.job_zw-->
+<!--        FROM-->
+<!--             jb_员工  p ,-->
+<!--             jb_职务 z-->
+<!--        where-->
+<!--           p.p_job_id = z.job_id AND p.p_name=#{p_name}-->
+<!--    </select>-->
+
+
+
+
+
+
+</mapper>
